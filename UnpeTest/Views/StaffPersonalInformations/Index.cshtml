@@ -1,0 +1,73 @@
+﻿@model IEnumerable<UnepProject.Models.StaffPersonalInformation>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullNames)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HighestLevelOfEducation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DutyStation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailabilityForRemoteWork)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullNames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighestLevelOfEducation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DutyStation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailabilityForRemoteWork)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IndexNumber }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IndexNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IndexNumber })
+            </td>
+            <td><a href="@Url.Action("Index", "StaffExamplesofProjects",new {staff_obj=item})" class="elements">Projects</a> | <a href="@Url.Action("Index", "StaffSoftwareExpertise",new {staff_obj=item})" class="elements">Software Expertise</a> | <a href="@Url.Action("Index", "StaffSoftwareExpertise",new {staff_obj=item})" class="elements">Software Expertise</a> Languages</td>
+       </tr>
+    }
+    
+    </table>
+</body>
+</html>

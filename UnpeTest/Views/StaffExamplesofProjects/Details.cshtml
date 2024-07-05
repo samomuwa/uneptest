@@ -1,0 +1,58 @@
+﻿@model UnepProject.Models.StaffExamplesofProjects
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>StaffExamplesofProjects</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProjectTitleAndLocation)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProjectTitleAndLocation)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LevelofResponsibility)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LevelofResponsibility)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BriefDescriptionOfRole)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BriefDescriptionOfRole)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IndexNumber_staff)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IndexNumber_staff)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

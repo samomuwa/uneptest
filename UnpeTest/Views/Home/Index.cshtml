@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h4>List of all staff</h4>
+@{
+    <ul>
+        @foreach (var x in ViewBag.staff_list)
+        {
+    <li>@x.FullNames</li>}
+    </ul>
+} 
+<a href="@Url.Action("Index", "StaffPersonalInformations")" class="elements">List staff </a>
